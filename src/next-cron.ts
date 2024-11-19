@@ -25,7 +25,7 @@ export class NextCron {
   }
 
   async fetchRequest<T>(path: string, options = {}) {
-    const res = await fetch(`${baseUrl}${path}`);
+    const res = await fetch(`${baseUrl}${path}`, options);
 
     if (!res.ok) {
       const text = await res.text();
