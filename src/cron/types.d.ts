@@ -4,8 +4,8 @@ export interface Cron {
   invocations: number;
   webhookId: string;
   status: "Active" | "Paused";
-  createdAt: Date;
-  nextInvocation: Date | null;
+  createdAt: string;
+  nextInvocation: string | null;
 }
 
 export interface GetCronResponse extends Cron {}

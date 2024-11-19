@@ -2,8 +2,8 @@ export interface Schedule {
   id: string;
   name: string;
   status: "Scheduled" | "Canceled" | "Failed";
-  createdAt: Date;
-  scheduledAt: Date;
+  createdAt: string;
+  scheduledAt: string;
   webhookId: string;
   data: string | null;
 }
@@ -18,7 +18,7 @@ export interface ListScheduleResponse {
 export interface CreateSchedule {
   name: string;
   webhookId: string;
-  scheduledAt: Date;
+  scheduledAt: Date | string;
   timezone?: string;
   data: string | null;
 }
@@ -33,7 +33,7 @@ export interface DeleteScheduleResponse {
 export interface UpdateSchedule {
   id: string;
   name?: string;
-  scheduledAt?: Date;
+  scheduledAt?: Date | string;
   webhookId?: string;
   data?: string | null;
 }

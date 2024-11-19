@@ -1,6 +1,6 @@
 {
   "name": "next-cron-node",
-  "version": "0.1.1",
+  "version": "0.1.4",
   "description": "Next Cron Node.js SDK",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
