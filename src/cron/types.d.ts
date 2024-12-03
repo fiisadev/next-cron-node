@@ -2,7 +2,7 @@ export interface Cron {
   id: string;
   expression: string;
   invocations: number;
-  webhookId: string;
+  endpoint: string;
   status: "Active" | "Paused";
   createdAt: string;
   nextInvocation: string | null;
@@ -18,7 +18,7 @@ export interface ListCronResponse {
 export interface CreateCron {
   name: string;
   expression: string;
-  webhookId: string;
+  endpoint: string;
   timezone?: string;
 }
 
@@ -27,7 +27,7 @@ export interface CreateCronResponse extends Cron {}
 export interface UpdateCron {
   id: string;
   name?: string;
-  webhookId?: string;
+  endpoint?: string;
   disabled?: boolean;
 }
 
