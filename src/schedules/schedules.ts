@@ -10,29 +10,29 @@ import type {
 import type { NextCron } from "../next-cron";
 
 export class Schedules {
-  readonly client: NextCron;
+  readonly #client: NextCron;
 
   constructor(client: NextCron) {
-    this.client = client;
+    this.#client = client;
   }
 
   get(id: string) {
-    return this.client.get<GetScheduleResponse>(`/schedules/${id}`);
+    return this.#client.get<GetScheduleResponse>(`/schedules/${id}`);
   }
 
   list() {
-    return this.client.get<ListScheduleResponse>("/schedules");
+    return this.#client.get<ListScheduleResponse>("/schedules");
   }
 
   create(data: CreateSchedule) {
-    return this.client.post<CreateScheduleResponse>("/schedules", data);
+    return this.#client.post<CreateScheduleResponse>("/schedules", data);
   }
 
   update({ id, ...data }: UpdateSchedule) {
-    return this.client.patch<UpdateScheduleResponse>(`/schedules/${id}`, data);
+    return this.#client.patch<UpdateScheduleResponse>(`/schedules/${id}`, data);
   }
 
   delete(id: string) {
-    return this.client.delete<DeleteScheduleResponse>(`/schedules/${id}`);
+    return this.#client.delete<DeleteScheduleResponse>(`/schedules/${id}`);
   }
 }
