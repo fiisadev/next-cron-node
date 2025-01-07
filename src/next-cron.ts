@@ -1,6 +1,7 @@
 import { Schedules } from "./schedules/schedules";
 import { Cron } from "./cron/cron";
 import { ApiKeys } from "./api-keys/api-keys";
+import { Webhooks } from "./webhooks/webhooks";
 
 const baseUrl = process.env.NEXT_CRON_BASE_URL || "https://api.next-cron.com";
 
@@ -10,6 +11,7 @@ export class NextCron {
   readonly schedule: Schedules = new Schedules(this);
   readonly cron: Cron = new Cron(this);
   readonly apiKeys: ApiKeys = new ApiKeys(this);
+  readonly webhooks: Webhooks = new Webhooks(this);
 
   constructor(key?: string) {
     if (!key) {
