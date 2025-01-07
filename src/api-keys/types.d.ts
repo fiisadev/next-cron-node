@@ -1,4 +1,4 @@
-interface ApiKey {
+export interface ApiKey {
   id: string;
   name: string;
   token_prefix: string;
@@ -6,14 +6,14 @@ interface ApiKey {
 
 export type ListApiKeyResponse = ApiKey[];
 
-interface CreateApiKey {
+export interface CreateApiKey {
   name?: string;
 }
 
-interface CreateApiKeyResponse {
+export interface CreateApiKeyResponse {
   id: string;
   name: string;
   token: string;
 }
 
-type DeleteApiKeyResponse = ApiKey;
+export type DeleteApiKeyResponse = ApiKey;
