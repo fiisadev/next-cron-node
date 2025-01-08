@@ -6,6 +6,7 @@ export interface Schedule {
   scheduledAt: string;
   endpoint: string;
   data: string | null;
+  tags: string[];
 }
 
 export interface GetScheduleResponse extends Schedule {}
@@ -21,6 +22,7 @@ export interface CreateSchedule {
   scheduledAt: Date | string;
   timezone?: string;
   data: string | null;
+  tags: string[];
 }
 
 export interface CreateScheduleResponse extends Schedule {}
@@ -36,6 +38,11 @@ export interface UpdateSchedule {
   scheduledAt?: Date | string;
   endpoint?: string;
   data?: string | null;
+  tags?: string[];
 }
 
 export interface UpdateScheduleResponse extends Schedule {}
+
+export interface DeleteSchedulesByTagResponse {
+  ids: string[];
+}

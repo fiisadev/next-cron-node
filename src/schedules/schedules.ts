@@ -6,6 +6,7 @@ import type {
   ListScheduleResponse,
   UpdateSchedule,
   UpdateScheduleResponse,
+  DeleteSchedulesByTagResponse,
 } from "./types";
 import type { NextCron } from "../next-cron";
 
@@ -34,5 +35,11 @@ export class Schedules {
 
   delete(id: string) {
     return this.#client.delete<DeleteScheduleResponse>(`/schedules/${id}`);
+  }
+
+  deleteByTag(tag: string) {
+    return this.#client.delete<DeleteSchedulesByTagResponse>(
+      `/schedules/by-tag/${tag}`
+    );
   }
 }
