@@ -17,22 +17,22 @@ export class Cron {
   }
 
   get(id: string) {
-    this.#client.get<GetCronResponse>(`/cron/${id}`);
+    return this.#client.get<GetCronResponse>(`/cron/${id}`);
   }
 
   list() {
-    this.#client.get<ListCronResponse>("/cron");
+    return this.#client.get<ListCronResponse>("/cron");
   }
 
   create(data: CreateCron) {
-    this.#client.post<CreateCronResponse>("/cron", data);
+    return this.#client.post<CreateCronResponse>("/cron", data);
   }
 
   update({ id, ...data }: UpdateCron) {
-    this.#client.patch<UpdateCronResponse>(`/cron/${id}`, data);
+    return this.#client.patch<UpdateCronResponse>(`/cron/${id}`, data);
   }
 
   delete(id: string) {
-    this.#client.delete<DeleteCronReseponse>(`/cron/${id}`);
+    return this.#client.delete<DeleteCronReseponse>(`/cron/${id}`);
   }
 }
