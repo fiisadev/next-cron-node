@@ -16,14 +16,23 @@ export interface ListScheduleResponse {
   schedules: Schedule[];
 }
 
-export interface CreateSchedule {
-  name: string;
-  endpoint: string;
-  scheduledAt: Date | string;
-  timezone?: string;
-  data: string | null;
-  tags: string[];
-}
+export type CreateSchedule =
+  | {
+      name: string;
+      endpoint: string;
+      scheduledAt: Date | string;
+      timezone?: string;
+      data?: string | null;
+      tags?: string[];
+    }
+  | {
+      name: string;
+      endpoint: string;
+      scheduledAt: Date | string;
+      timezone?: string;
+      data?: string | null;
+      tags?: string[];
+    }[];
 
 export interface CreateScheduleResponse extends Schedule {}
 
