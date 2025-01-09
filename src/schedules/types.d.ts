@@ -34,7 +34,9 @@ export type CreateSchedule =
       tags?: string[];
     }[];
 
-export interface CreateScheduleResponse extends Schedule {}
+export type CreateScheduleResponse<T extends CreateSchedule> = T extends any[]
+  ? { created: number }
+  : Schedule;
 
 export interface DeleteScheduleResponse {
   id: string;

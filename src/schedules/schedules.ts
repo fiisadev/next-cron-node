@@ -25,8 +25,8 @@ export class Schedules {
     return this.#client.get<ListScheduleResponse>("/schedules");
   }
 
-  create(data: CreateSchedule) {
-    return this.#client.post<CreateScheduleResponse>("/schedules", data);
+  create<T extends CreateSchedule>(data: T) {
+    return this.#client.post<CreateScheduleResponse<T>>("/schedules", data);
   }
 
   update({ id, ...data }: UpdateSchedule) {
