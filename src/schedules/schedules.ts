@@ -33,7 +33,13 @@ export class Schedules {
     return this.#client.patch<UpdateScheduleResponse>(`/schedules/${id}`, data);
   }
 
-  delete(id: string) {
+  delete(id: string | string[]) {
+    if (Array.isArray(id)) {
+      return this.#client.delete<DeleteScheduleResponse>(`/schedules`, {
+        data: { id },
+      });
+    }
+
     return this.#client.delete<DeleteScheduleResponse>(`/schedules/${id}`);
   }
 
